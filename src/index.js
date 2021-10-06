@@ -1,17 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//ES6 Refresher
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//var -> function
+//let -> block
+//const -> block
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//Objects
+// const person ={
+//     name: 'Carrington',
+//     walk(){},
+//     talk(){}
+// };
+//
+// person.talk();
+//
+// const targetMember = 'name';
+// person['name'] = 'John';
+
+//This Keyword
+const person = {
+    name: "Mosh",
+    walk(){
+        console.log(this); //
+    }
+};
+
+person.walk()
+
+const walk = person.walk.bind(person); //Binds "this" to the person object
+walk();
+
+//Arrow Functions
+// const square = function(number){
+//     return number * number;
+// }
+//
+// const square = number => number * number //Same function as line 33
+const jobs = [
+    {id:1, isActive:true},
+    {id:2, isActive:true},
+    {id:3, isActive:false}
+]
+
+//Two functions below are the same
+const activeJobs = jobs.filter(function(job) { return job.isActive});
+const activeJobs = jobs.filter(job => job.isActive);
